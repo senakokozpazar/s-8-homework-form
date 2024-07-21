@@ -15,7 +15,7 @@ const initialValues = {
 const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regexPassword = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
 
-const errorMessages = {
+export const errorMessages = {
   name: "En az 3 karakter giriniz",
   email: "Geçerli bir email adresi giriniz",
   password: "En az 1 büyük 1 küçük harf, 1 sembol ve 1 sayı içeren şifre giriniz",
@@ -95,7 +95,7 @@ function FormPage() {
                 invalid={errors.name}
                 data-cy="name-input"
               />
-              {errors.name && <FormFeedback>{errorMessages.name}</FormFeedback>}
+              {errors.name && <FormFeedback data-cy="error-message">{errorMessages.name}</FormFeedback>}
             </FormGroup>
 
             <FormGroup>
@@ -110,7 +110,7 @@ function FormPage() {
                 invalid={errors.email}
                 data-cy="email-input"
               />
-              {errors.email && <FormFeedback>{errorMessages.email}</FormFeedback>}
+              {errors.email && <FormFeedback data-cy="error-message">{errorMessages.email}</FormFeedback>}
             </FormGroup>
 
             <FormGroup>
@@ -125,7 +125,7 @@ function FormPage() {
                 invalid={errors.password}
                 data-cy="password-input"
               />
-              {errors.password && <FormFeedback>{errorMessages.password}</FormFeedback>}
+              {errors.password && <FormFeedback data-cy="error-message">{errorMessages.password}</FormFeedback>}
             </FormGroup>
 
             <FormGroup check>
@@ -142,7 +142,7 @@ function FormPage() {
               {errors.agree && <FormFeedback>{errorMessages.agree}</FormFeedback>}
             </FormGroup>
 
-            <Button color="primary" type="submit" disabled={!isValid}>Gönder</Button>
+            <Button color="primary" type="submit" disabled={!isValid} data-cy="button">Gönder</Button>
           </Form>
         </CardBody>
       </Card>
