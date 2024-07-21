@@ -93,6 +93,7 @@ function FormPage() {
                 value={formData.name}
                 onChange={handleChange}
                 invalid={errors.name}
+                data-cy="name-input"
               />
               {errors.name && <FormFeedback>{errorMessages.name}</FormFeedback>}
             </FormGroup>
@@ -107,6 +108,7 @@ function FormPage() {
                 value={formData.email}
                 onChange={handleChange}
                 invalid={errors.email}
+                data-cy="email-input"
               />
               {errors.email && <FormFeedback>{errorMessages.email}</FormFeedback>}
             </FormGroup>
@@ -121,6 +123,7 @@ function FormPage() {
                 value={formData.password}
                 onChange={handleChange}
                 invalid={errors.password}
+                data-cy="password-input"
               />
               {errors.password && <FormFeedback>{errorMessages.password}</FormFeedback>}
             </FormGroup>
@@ -132,6 +135,7 @@ function FormPage() {
                 checked={formData.agree}
                 onChange={handleChange}
                 invalid={errors.agree}
+                data-cy="terms-input"
               />
               {' '}
               <Label check>Şartları ve sorumlulukları kabul ediyorum.</Label>
